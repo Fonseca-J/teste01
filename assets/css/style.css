@@ -1,0 +1,446 @@
+/* =============================================
+   ESTILOS UNIFICADOS - SHALOM ADONAI
+   Versão: 2.0
+   Data: 15/06/2023
+   ============================================= */
+
+/* ====================
+   Variáveis e Reset
+   ==================== */
+   :root {
+    --roxo-principal: #6f42c1;
+    --roxo-claro: #9d7cff;
+    --roxo-escuro: #4d2d91;
+    --cinza-claro: #f8f9fa;
+    --cinza-escuro: #343a40;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra-destaque: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--cinza-claro);
+    padding-top: 56px; /* Compensar navbar fixa */
+}
+
+/* ====================
+   Tipografia
+   ==================== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* ====================
+   Componentes Globais
+   ==================== */
+/* Cores Temáticas */
+.bg-purple {
+    background-color: var(--roxo-principal) !important;
+}
+
+.text-purple {
+    color: var(--roxo-principal) !important;
+}
+
+.btn-purple {
+    background-color: var(--roxo-principal);
+    border-color: var(--roxo-principal);
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: var(--roxo-escuro);
+    border-color: var(--roxo-escuro);
+    color: white;
+}
+
+.btn-outline-purple {
+    border-color: var(--roxo-principal);
+    color: var(--roxo-principal);
+}
+
+.btn-outline-purple:hover {
+    background-color: var(--roxo-principal);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: var(--sombra);
+    padding: 0.75rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--roxo-claro) !important;
+}
+
+.nav-link.active {
+    color: white !important;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-section .container {
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: var(--sombra);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-destaque);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: var(--roxo-principal);
+}
+
+.card-text {
+    flex-grow: 1;
+}
+
+/* Seções */
+section {
+    padding: 5rem 0;
+}
+
+.bg-light {
+    background-color: var(--cinza-claro) !important;
+}
+
+/* Botão Flutuante */
+.btn-agendar-flutuante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(111, 66, 193, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-agendar-flutuante:hover {
+    transform: scale(1.1);
+}
+
+.btn-agendar-flutuante div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.btn-agendar-flutuante i {
+    font-size: 1.2rem;
+}
+
+/* Efeito Pulsante */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(111, 66, 193, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(111, 66, 193, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(111, 66, 193, 0);
+    }
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cinza-escuro);
+    color: white;
+}
+
+footer hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 1rem auto;
+    width: 50%;
+}
+
+/* ====================
+   Página de Agendamento
+   ==================== */
+/* Layout Principal */
+.card-agendamento {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-agendamento:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(111, 66, 193, 0.15) !important;
+}
+
+/* Formulário */
+.form-control-lg, .form-select-lg {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input:checked {
+    background-color: var(--roxo-principal);
+    border-color: var(--roxo-principal);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25);
+}
+
+.form-check-label {
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.form-check-input:hover + .form-check-label {
+    color: var(--roxo-principal);
+}
+
+/* Horários */
+select option:disabled {
+    color: #dc3545;
+    text-decoration: line-through;
+    background-color: #fff;
+}
+
+.horario-bloqueado {
+    color: #dc3545 !important;
+}
+
+/* Botão Agendar */
+.btn-agendar {
+    background-color: var(--roxo-principal);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.btn-agendar:hover {
+    background-color: var(--roxo-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Alertas */
+.alert-flutuante {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1100;
+    min-width: 300px;
+    text-align: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Modais */
+.modal-confirmacao-icon {
+    font-size: 3rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.agendamento-detalhes {
+    border-left: 3px solid var(--roxo-principal);
+    background-color: rgba(248, 249, 250, 0.5);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+/* Lista de Informações */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item h4 {
+    color: var(--roxo-principal);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-item i {
+    width: 24px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* ====================
+   Responsividade
+   ==================== */
+@media (max-width: 992px) {
+    .contact-section iframe {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-check-label {
+        font-size: 0.9rem;
+    }
+    
+    .btn-agendar-flutuante {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+}
+
+/* ====================
+   Utilitários
+   ==================== */
+.rounded-3 {
+    border-radius: 10px !important;
+}
+
+.shadow-sm {
+    box-shadow: var(--sombra) !important;
+}
+
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.transition-all {
+    transition: all 0.3s ease;
+}
